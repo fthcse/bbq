@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" type="image/x-icon" href="static/img/love.ico">
+    <link href="static/css/index.css" type="text/css" rel="stylesheet">
+    <link href="static/css/star.css" type="text/css" rel="stylesheet">
+    <link href="static/css/animations.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript">
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if(clientWidth>=640){
+                        docEl.style.fontSize = '100px';
+                    }else{
+                        docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                    }
+                };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <title>LOVE</title>
+    <script type="text/javascript" src="static/js/jquery.js"></script>
+    <!--<script type="text/javascript" src="static/js/garden.js"></script>-->
+    <script type="text/javascript" src="static/js/index.js"></script>
+    <script type="text/javascript" src="static/js/star.js"></script>
+</head>
+<body>
+<div>
+    <div id="mainDiv">
+        <div id="content">
+            <div id="code">
+                <span class="height-length"><span class="space"></span><span class="comments">// From 2017—08-27 to now</span><br/></span>
+                <span class="height-length">Boy name = <span class="keyword">Mr</span> MA<br/></span>
+                <span class="height-length"><span class="comments">// Precious things are very few in this world.</span><br/></span>
+                <span class="height-length"><span class="comments">// That is the reason there is just one you.</span><br/></span>
+                <span class="height-length">Girl name = <span class="keyword">Mrs</span> YE<br/></span>
+                <span class="height-length"><span class="comments">// I want to say:</span><br/></span>
+                <span class="height-length">I love you <span class="keyword">forever</span><br/></span>
+            </div>
+
+            <div id="subpage" style="height: 280px;">
+                <!--<iframe id="ifif" frameborder="0" scrolling="no" src="subpage/3d-love.html" width="100%" height="280px"></iframe>-->
+                <!--<iframe id="ifif" frameborder="0" scrolling="no" src="subpage/star.html" width="100%" height="280px"></iframe>-->
+
+                <div class="container">
+                    <!-- stars -->
+                    <div class="star star-1"></div>
+                    <div class="star star-2"></div>
+                    <div class="star star-3"></div>
+                    <!-- clouds -->
+                    <div class="cloud-group-1">
+                        <div class="cloud cloud-1"></div>
+                        <div class="cloud cloud-2"></div>
+                        <div class="cloud cloud-3"></div>
+                        <div class="cloud cloud-4"></div>
+                        <div class="cloud cloud-5"></div>
+                        <div class="cloud cloud-6"></div>
+                    </div>
+                    <div class="cloud-group-2">
+                        <div class="cloud cloud-1"></div>
+                        <div class="cloud cloud-2"></div>
+                        <div class="cloud cloud-3"></div>
+                        <div class="cloud cloud-4"></div>
+                        <div class="cloud cloud-5"></div>
+                        <div class="cloud cloud-6"></div>
+                    </div>
+                    <div class="cloud-group-3">
+                        <div class="cloud cloud-1"></div>
+                        <div class="cloud cloud-2"></div>
+                        <div class="cloud cloud-3"></div>
+                        <div class="cloud cloud-4"></div>
+                        <div class="cloud cloud-5"></div>
+                        <div class="cloud cloud-6"></div>
+                    </div>
+                    <!-- orbits -->
+                    <div class="orbit orbit-1"></div>
+                    <div class="orbit orbit-2"></div>
+                    <div class="orbit orbit-3"></div>
+                    <div class="orbit orbit-4"></div>
+                    <div class="orbit orbit-5"></div>
+                    <div class="orbit orbit-6"></div>
+                    <!-- main planet -->
+                    <div class="ring-before"></div>
+                    <div class="ring-bigger-before"></div>
+                    <div class="planet"></div>
+                    <div class="ring-after"></div>
+                    <div class="ring-bigger-after"></div>
+                    <!-- sub planet -->
+                    <div class="sub-planet"></div>
+                </div>
+
+            </div>
+
+            <div id="loveHeart">
+                <!--<canvas id="garden"></canvas>-->
+                <div id="words">
+                    <div id="messages">
+                        <span class="is-animate3 style3"><span>小</span><span>姐</span><span>姐</span></span>，这是我们在一起的时光<span class="is-animate4 style4">.</span> .</span> .</span></span>
+                        <div id="elapseClock"></div>
+                    </div>
+                    <div id="loveu">
+                        <span id="up">和你一直走下去<span id="lastLetter">。</span></span><br/>
+                        <div class="signature"><span id="uname" class="is-animate3 style3">- <span>馬</span><span>先</span><span>生</span></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var clientWidth = document.body.clientWidth;
+        var clientHeight = document.body.clientHeight;
+        $("#loveHeart").height(clientHeight * 0.3);
+        var codeHeight = 0;
+        $(".height-length").each(function () {
+            codeHeight += this.offsetHeight;
+        });
+        $("#code").height(codeHeight * 1.3);
+        // $("#code").height(clientHeight * 0.3);
+        // var $loveHeart = $("#loveHeart");
+        // var $gardenXY = $("#garden");
+        // var offsetX = $gardenXY.width() / 2;66
+        // var offsetY = $gardenXY.height() / 2 + 150;
+        var together = new Date();
+        together.setFullYear(2017, 7, 24);//JS Date对象，月份范围：0~11
+        together.setHours(19);
+        together.setMinutes(0);
+        together.setSeconds(0);
+        together.setMilliseconds(0);
+
+        // setTimeout(function () {
+        //     startHeartAnimation();
+        // }, 5000);/
+
+        timeElapse(together);
+        setInterval(function () {
+            timeElapse(together);
+        }, 500);
+        // // adjustCodePosition();
+        $("#code").typewriter();
+
+        // setTimeout(function () {
+        //     $("#ifif").show();
+        //     setTimeout(function () {
+        //          $("#words").show();
+        //     }, 2100);
+        // }, 1);//16800
+
+        var offset = clientWidth - document.getElementById("lastLetter").offsetLeft;
+        var right = clientWidth / 2 - offset;
+        var unameWidth = $("#uname").width() / 2;
+        var normalRight = right + unameWidth;
+        var upRight = $("#up").width() / 2;
+        var marginRight = 0;
+        if (normalRight < clientWidth / 2) {
+            marginRight = normalRight;
+        } else if (unameWidth < clientWidth / 2) {
+            marginRight = unameWidth;
+        } else if (upRight < clientWidth / 2) {
+            marginRight = upRight;
+        }
+        $(".signature").css("margin-left", marginRight);
+    </script>
+
+    <div style="text-align:center;clear:both">
+    </div>
+</div>
+</body>
+</html>
